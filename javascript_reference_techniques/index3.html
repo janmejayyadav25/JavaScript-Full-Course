@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       function Bodyload(){
+        pic.src="../images/pexels2.jpg";
+        frmRegister.btnRegister.value ="Register";
+        frmLogin.btnLogin.value = "Login";
+       }
+    </script>
+</head>
+<body onload="Bodyload()">
+    <div>
+        <img name="pic" src="" alt="" width="100" height="100" border="1">
+    </div>
+    <div>
+        <form name="frmRegister">
+            <h2>Register User</h2>
+            <input type="text" placeholder="Your useId">
+            <input type="button" name="btnRegister">
+        </form>
+    </div>
+    <div>
+        <form name="frmLogin">
+            <h2>User Login</h2>
+            <input type="email" placeholder="email">
+            <input type="button" name="btnLogin">
+        </form>
+    </div>
+</body>
+</html>
