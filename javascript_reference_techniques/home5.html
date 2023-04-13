@@ -6,29 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        function BodyLoad(){
-            document.getElementById("pic").src ="../images/pexels3.jpg";
-            document.getElementById("btnRegister").value ="Register";
-            document.getElementById("btnlogin").value ="Login";
-        }
+       function Bodyload(){
+        result = document.getElementsByTagName("div");
+        alert("Total Number of Div : " + result.length)
+       }
     </script>
 </head>
-<body onload="BodyLoad()">
+<body onload="Bodyload()">
     <div>
-        <img src="" alt="" id="pic" width="100" height="100" border="1">
+        <img src="" alt="" width="100" height="100" border="1">
     </div>
     <div>
         <form>
             <h1>Register User</h1>
-            <input type="text" placeholder="Your userId">
-            <input type="button" id="btnRegister">
+            <input type="text" placeholder="Userid">
+            <input type="button">
         </form>
     </div>
     <div>
         <form>
             <h1>User Login</h1>
             <input type="email" placeholder="email">
-            <input type="button" id="btnlogin">
+            <input type="button">
         </form>
     </div>
 </body>
