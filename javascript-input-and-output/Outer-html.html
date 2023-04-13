@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function DeleteClick(){
+            flag = confirm("Confirm Dlete : Record will be Dleted. \nAre you sure");
+            if(flag==true){
+                document.getElementById("msg").outerHTML = "<h3>Record Delete</h3>";
+
+            } else {
+                document.getElementById("msg").innerText = "You Cancled";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Click Delete Button</h1>
+    <button onclick="DeleteClick()">Delete</button>
+    <p id="msg"></p>
+</body>
+</html>
