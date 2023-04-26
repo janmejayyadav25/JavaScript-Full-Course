@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ChangeCase(){
+            var UserName = document.getElementById("UserName").value;
+            document.getElementById("UserName").value = UserName.toUpperCase();
+
+
+            var UserError = document.getElementById("UserError");
+
+            if(UserName=="JANMEJAY") {
+                UserError.innerHTML = "User Name Taken - Try Another";
+            } else {
+                UserError.innerHTML ="User Name Avilable";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserName</dt>
+        <dd><input type="text" onkeyup="ChangeCase()" id="UserName" placeholder="Name Only Block Letter"></dd>
+        <dd id="UserError"></dd>
+    </dl>
+</body>
+</html>

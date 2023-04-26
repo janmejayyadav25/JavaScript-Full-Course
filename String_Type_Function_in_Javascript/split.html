@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyUserId(){
+            var UserId = document.getElementById("UserId").value;
+            var userError = document.getElementById("userError");
+
+
+            if(UserId.trim()=="jhon_nit"){
+                userError.innerHTML ="user verifed";
+            } else {
+                userError.innerHTML ="Invalid User id";
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserId</dt>
+        <dd><input type="text" id="UserId" onblur="VerifyUserId()"></dd>
+        <dd id="userError"></dd>
+    </dl>
+</body>
+</html>
