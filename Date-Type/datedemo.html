@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dt {
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+        dl{
+            display: grid;
+            grid-template-columns: 6fr 6fr ;
+        }
+    </style>
+    <script>
+        function SubmitClick(){
+            var date = new Date(document.getElementById("txtDate").value);
+            var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuresday", "Friday", "Saturday"];
+          var months = ["jan", "Feb", "March", "April", "May", "Jun", "July", "Agust", "September", "Octuber", "Novmber", "Decmber"];
+          document.getElementById("lblDay").innerHTML = weekdays[date.getDay()];
+          document.getElementById("lblDate").innerHTML = date.getDate();
+          document.getElementById("lblMonth").innerHTML =months[date.getMonth()];
+          document.getElementById("lblYear").innerHTML = date.getFullYear();
+        }
+    </script>
+</head>
+<body>
+    Departure:
+    <input id="txtDate" type="datetime-local"><button onclick="SubmitClick()">Submit</button>
+    <br><br>
+    <fieldset>
+        <legend>Departure Details</legend>
+        <dl>
+            <dt>Departure Day</dt>
+            <dd id="lblDay"></dd>
+            <dt>Departure Date</dt>
+            <dd id="lblDate"></dd>
+            <dt>Deprature Month</dt>
+            <dd id="lblMonth"></dd>
+            <dt>Departure Year</dt>
+            <dd id="lblYear"></dd>
+        </dl>
+    </fieldset>
+</body>
+</html>

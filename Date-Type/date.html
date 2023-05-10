@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script>
+        function GetTime(){
+           
+          var time = new Date();
+          document.getElementById("lblTime").innerHTML = time.toLocaleTimeString();
+        }
+        function bodyload(){
+          setInterval(GetTime,1000);
+           
+          var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuresday", "Friday", "Saturday"];
+          var months = ["jan", "Feb", "March", "April", "May", "Jun", "July", "Agust", "September", "Octuber", "Novmber", "Decmber"];
+
+
+          var date = new Date();
+          var weekday = date.getDay();
+          var day = date.getDate();
+          var month = date.getMonth();
+          var year = date.getFullYear();
+          var hours = date.getHours();
+
+
+          var msg = document.getElementById("lblMsg");
+          var icon = document.getElementById("lblIcon");
+          if(hours>=0 && hours<=12){
+            msg .innerHTML = "Good Morning";
+            icon.className = "bi bi-sun";
+          } else if(hours>12 && hours<=17){
+            msg.innerHTML = "Good Afternoon";
+            icon.className = "bi bi-sun-fill";
+          } else {
+            msg.innerHTML = "Good Evening";
+          }
+          document.getElementById("lblDate").innerHTML = `${weekdays[weekday]} , ${day} ${months[month]}-${year}`;
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="mt-2 btn-toolbar bg-danger text-white justify-content-between">
+        <div class="btn-group">
+         <button class="btn btn-danger"> <span class="bi bi-cart4"></span>Shooper</button>
+        </div>
+        <div>
+            <div class="btn-group">
+               <button class="btn btn-danger">
+                <span id="lblIcon"></span>
+                   <span id="lblMsg"></span>
+               </button>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-danger">
+               <span class="bi bi-calendar-date"></span>
+               <span id="lblDate"></span>
+            </button>
+            <button class="btn btn-danger">
+              <span class="bi bi-clock-fill"></span>
+              <span id="lblTime"></span>
+            </button>
+
+        </div>
+
+    </div>
+</body>
+</html>
