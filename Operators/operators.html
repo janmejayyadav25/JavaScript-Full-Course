@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function LoginClick(){
+        var userName = document.getElementById("UserName").value;
+        var password = document.getElementById("password").value;
+        fetch("../data/users.json")
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(users){
+            for(var user of users){
+              if(user.UserName===UserName && user.password==password){
+                document.write("<h3>Login Success</h3>");
+                break;
+              }  else {
+                document.getElementById("msg").innerHTML = "Invalid User Name / password".fontcolor('red');
+              }
+            }
+        })
+       }
+    </script>
+</head>
+<body>
+    <dl>
+        <h1>User Login</h1>
+        <dt>User Name</dt>
+        <dd><input type="text" id="UserName"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+    <h2 align="center" id="msg"></h2>
+</body>
+</html>
